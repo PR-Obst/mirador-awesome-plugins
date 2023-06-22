@@ -17,7 +17,7 @@ class SetColorDialog extends Component {
       colorValue: '',
       helperText: false,
     };
-    
+
     this.handleChange = this.handleChange.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.updateColor = this.updateColor.bind(this);
@@ -25,9 +25,9 @@ class SetColorDialog extends Component {
 
   handleChange(event) {
     const { helperText } = this.state;
-    
+
     event.preventDefault();
-    if(helperText) {
+    if (helperText) {
       this.setState({ helperText: false });
     }
     this.setState({
@@ -50,8 +50,8 @@ class SetColorDialog extends Component {
     const { colorValue } = this.state;
 
     var reg = /^#([0-9a-f]{3}){1,2}$/i;
-    
-    if(reg.test(colorValue)) {
+
+    if (reg.test(colorValue)) {
       const config = {
         themes: {
           dark: {
@@ -71,23 +71,23 @@ class SetColorDialog extends Component {
             }
           }
         },
-        theme: { 
+        theme: {
           palette: {
             type: 'light',
-              primary: {
-                main: colorValue,
-              },
-              secondary: {
-                main: colorValue,
-              },
+            primary: {
+              main: colorValue,
+            },
+            secondary: {
+              main: colorValue,
             },
           },
-        };
-  
+        },
+      };
+
       updateConfig(config);
     } else {
-      this.setState({ 
-        helperText: true 
+      this.setState({
+        helperText: true
       });
     }
   }
@@ -109,7 +109,7 @@ class SetColorDialog extends Component {
             helperText={helperText && t('helperText')}
             error={helperText} />
           <DialogActions>
-            <Button onClick={this.updateColor}>
+            <Button color="primary" variant="contained" onClick={this.updateColor}>
               {t('submit')}
             </Button>
             <Button onClick={this.handleClose}>

@@ -4,14 +4,14 @@ import { withStyles } from '@material-ui/core';
 import SetColorComponent from '../components/SetColorComponent';
 
 const styles = theme => ({
-    ctrlBtn: {
-        margin: theme.spacing(1),
-    },
+  ctrlBtn: {
+    margin: theme.spacing(1),
+  },
 });
 
 const enhance = compose(
-    withTranslation(),
-    withStyles(styles),
+  withTranslation(),
+  withStyles(styles),
 )
 
 export default enhance(SetColorComponent);

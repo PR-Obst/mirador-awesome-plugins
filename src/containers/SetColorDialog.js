@@ -5,14 +5,14 @@ import { updateConfig } from 'mirador/dist/es/src/state/actions';
 import SetColorDialog from '../components/SetColorDialog';
 
 const mapDispatchToProps = (dispatch) => ({
-    updateConfig: (config) => { 
-        dispatch(updateConfig({theme: config.theme, themes: config.themes}));
-    },
+  updateConfig: (config) => {
+    dispatch(updateConfig({ theme: config.theme, themes: config.themes }));
+  },
 });
 
 const enhance = compose(
-    withTranslation(),
-    connect(null, mapDispatchToProps),
+  withTranslation(),
+  connect(null, mapDispatchToProps),
 );
 
 export default enhance(SetColorDialog);
